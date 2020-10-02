@@ -1,4 +1,7 @@
-data class Curso (var nome: String, val cod: Int) {
+data class Curso (var nome: String, val cod: Int, var qtdMaxAlunos: Int) {
+
+    var profTitular: ProfessorTitular? = null
+    var profAdjunto: ProfessorAdjunto? = null
 
     //Auto generated method.
     //Two Cursos are equals if they have same cod
