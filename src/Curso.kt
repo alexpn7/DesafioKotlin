@@ -1,8 +1,8 @@
-data class Curso (var nome: String, val cod: Int, var qtdMaxAlunos: Int) {
+class Curso (var nome: String, val cod: Int, var qtdMaxAlunos: Int) {
 
     var profTitular: ProfessorTitular? = null
     var profAdjunto: ProfessorAdjunto? = null
-    var listaAlunos: MutableSet<Aluno>? = null
+    val listaAlunos: MutableSet<Aluno>? = null
 
     //Auto generated method.
     //Two Cursos are equals if they have same cod
@@ -25,6 +25,28 @@ data class Curso (var nome: String, val cod: Int, var qtdMaxAlunos: Int) {
         return cod
     }
 
-    //Not needed to override toString() in data classes as the inherited method lists only and all
-    //relevant information
+    override fun toString(): String {
+        return "Curso(nome='$nome', cod=$cod)"
+    }
+
+    fun adicionarUmAluno(umAluno: Aluno): Boolean {
+
+        //listaAlunos = mutableSetOf()
+        if (listaAlunos != null && listaAlunos.size < qtdMaxAlunos) {
+            if (listaAlunos.add(umAluno)) {
+                qtdMaxAlunos++
+                return true
+            }
+        }
+        return false
+    }
+
+    fun excluirAluno(umAluno: Aluno) {
+        if (listaAlunos != null) {
+            if (listaAlunos.remove(umAluno)) {
+                qtdMaxAlunos++
+            }
+        }
+    }
+
 }
