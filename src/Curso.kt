@@ -2,6 +2,7 @@ data class Curso (var nome: String, val cod: Int, var qtdMaxAlunos: Int) {
 
     var profTitular: ProfessorTitular? = null
     var profAdjunto: ProfessorAdjunto? = null
+    var listaAlunos: MutableSet<Aluno>? = null
 
     //Auto generated method.
     //Two Cursos are equals if they have same cod
