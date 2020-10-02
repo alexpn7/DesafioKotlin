@@ -1,4 +1,4 @@
-data class Professor (val nome: String, var sobrenome: String, var tempoDeCasa: Int, val cod: Int) {
+open class Professor (val nome: String, var sobrenome: String, var tempoDeCasa: Int, val cod: Int) {
 
     //Auto generated method.
     //Two Professores are equals if they have same cod
@@ -21,6 +21,8 @@ data class Professor (val nome: String, var sobrenome: String, var tempoDeCasa: 
         return cod
     }
 
-    //Not needed to override toString() in data classes as the inherited method lists only and all
-    //relevant information
+    //Auto generated method.
+    override fun toString(): String {
+        return "Professor(nome='$nome', sobrenome='$sobrenome', cod=$cod)"
+    }
 }
