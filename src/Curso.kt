@@ -2,7 +2,7 @@ class Curso (var nome: String, val cod: Int, var qtdMaxAlunos: Int) {
 
     var profTitular: ProfessorTitular? = null
     var profAdjunto: ProfessorAdjunto? = null
-    val listaAlunos: MutableSet<Aluno>? = null
+    val listaAlunos: MutableSet<Aluno> = mutableSetOf()
 
     //Auto generated method.
     //Two Cursos are equals if they have same cod

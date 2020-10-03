@@ -1,6 +1,6 @@
 class DigitalHouseManager() {
 
-    //fazer com varargs
+    //tentar fazer com varargs
     var listaAlunos: MutableSet<Aluno> = mutableSetOf()
     var listaProfessores: MutableSet<Professor> = mutableSetOf()
     val listaCursos: MutableSet<Curso> = mutableSetOf()
@@ -24,7 +24,7 @@ class DigitalHouseManager() {
         val umProfessorAdj = ProfessorAdjunto(quantidadeDeHoras, nome, sobrenome, 0, codigoProfessor)
         //Only adds if it does not belong to the set
         if (listaProfessores.add(umProfessorAdj))
-            println("${umProfessorAdj} cadastrado com sucesso")
+            println("${umProfessorAdj} adjunto registrado com sucesso")
         else
             println("Professor adjunto com o código informado ja existe")
     }
@@ -34,7 +34,7 @@ class DigitalHouseManager() {
         val umProfessorTit = ProfessorTitular(especialidade, nome, sobrenome, 0, codigoProfessor)
         //Only adds if it does not belong to the set
         if (listaProfessores.add(umProfessorTit))
-            println("${umProfessorTit} cadastrado com sucesso")
+            println("${umProfessorTit} titular cadastrado com sucesso")
         else
             println("Professor titular com o código informado ja existe")
     }
@@ -92,5 +92,17 @@ class DigitalHouseManager() {
         umCurso.profAdjunto = umProfAdj as ProfessorAdjunto
         umCurso.profTitular = umProfTit as ProfessorTitular
         println("Professores alocados com sucesso")
+    }
+    fun imprimirListaProfessores () {
+        listaProfessores.forEach{println(it)}
+    }
+    fun imprimirlistaAlunos () {
+        listaAlunos.forEach{println(it)}
+    }
+    fun imprimirlistaCursos () {
+        listaCursos.forEach{println(it)}
+    }
+    fun imprimirlistaMatriculas () {
+        listaMatriculas.forEach{println(it)}
     }
 }

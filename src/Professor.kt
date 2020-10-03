@@ -1,4 +1,4 @@
-open class Professor (val nome: String, var sobrenome: String, var tempoDeCasa: Int, val cod: Int) {
+open abstract class Professor (val nome: String, var sobrenome: String, var tempoDeCasa: Int, val cod: Int) {
 
     //Auto generated method.
     //Two Professores are equals if they have same cod
